@@ -52,13 +52,12 @@ app.post('/upload', function(req, res) {
       password: req.body['userData[password]'],
       gender: req.body['userData[gender]'],
       pet: req.body['userData[pet]'],
-     
-
 
     }).then(function (dbUser) {
       tmpJson.dbUser = dbUser;
       return db.Profession.create({
-          category: req.body['professionData[category]']
+          category: req.body['professionData[category]'], 
+          owner: dbUser.id
       });
   }).then(function (professionData) {
       tmpJson.professionData = professionData;
