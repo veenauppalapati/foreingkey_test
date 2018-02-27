@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS `person_db`;
+CREATE DATABASE `person_db`;
